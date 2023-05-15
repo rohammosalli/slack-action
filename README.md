@@ -44,7 +44,7 @@ To disable the sending of Slack messages upon successful completion, simply set 
 10. Invite the bot to the desired channel in your Slack workspace by typing @bot_username and selecting the bot from the list. Click "Invite".
 
 ### Github Token 
-###### To create a GitHub token, follow these steps:
+##### To create a GitHub token, follow these steps:
 
 1. Sign in to your GitHub account and go to your account settings by clicking on your profile picture in the top-right corner.
 2. In the settings sidebar, click on "Developer settings".
