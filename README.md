@@ -1,7 +1,12 @@
 # Custom GitHub Action for Slack Notification:
 
 Custom GitHub Action for Slack Notification: Sends Slack notifications when failed build jobs become green again
-
+ 
+ ### features
+1. Connects to the GitHub API to fetch information about workflow runs and jobs.
+2. Sends Slack notifications using a Slack bot token for authentication.
+3. Notifies about failed jobs in a workflow run, with relevant information and links.
+4. Optionally sends notifications for successful workflow runs based on the SEND_SUCCESS_NOTIFICATIONS environment variable.
 
 ### How use it in Github action 
 
