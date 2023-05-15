@@ -1,0 +1,19 @@
+name: "Custom Slack Notification"
+description: "Send a Slack notification when a failed build becomes green again"
+author: "Roham Mosalli"
+branding:
+  icon: "message-square"
+  color: "green"
+inputs:
+  slack-channel:
+    description: "Slack channel to send notifications"
+    required: true
+  github-token:
+    description: "GitHub token to access the API"
+    required: true
+  slack-bot-token:
+    description: "Slack bot token to send messages"
+    required: true
+runs:
+  using: "docker"
+  image: "docker://rohammosalli/slack-action:v1.0.0"
