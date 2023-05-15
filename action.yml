@@ -1,4 +1,4 @@
-name: "Custom Slack Notification"
+name: "GitHub Actions Notifier for Slack"
 description: "Send a Slack notification when a failed build becomes green again"
 author: "Roham Mosalli"
 branding:
