@@ -7,7 +7,10 @@ Custom GitHub Action for Slack Notification: Sends Slack notifications when fail
 2. Sends Slack notifications using a Slack bot token for authentication.
 3. Notifies about failed jobs in a workflow run, with relevant information and links.
 4. Optionally sends notifications for successful workflow runs based on the SEND_SUCCESS_NOTIFICATIONS environment variable.
-
+5. Send a success message if the last build failed but the current build was successful.
+6. Send a success message if the current build is successful after retrying the same workflow run with previously failed jobs.
+7. Send a message if there was a failed build.
+8. Added build duration in a successful build
 ### How use it in Github action 
 
 ```yaml
