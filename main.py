@@ -113,6 +113,6 @@ elif SEND_SUCCESS_MESSAGE and not any(job['conclusion'] == 'failure' for job in 
         send_slack_notification(
             f":white_check_mark: Workflow '{workflow_name}' run {RUN_ID} has succeeded in {REPO_OWNER}/{REPO_NAME} after previous failure.\n"
             f"Commit: <{commit_url}|{commit_sha[:7]}>\n"
-            f"Workflow: <{workflow_url}|Link>"
+            f"Workflow: <{workflow_url}|Link>\n"
             f"Build Duration: {duration_str}"
         )
