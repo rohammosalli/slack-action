@@ -16,4 +16,4 @@ inputs:
     required: true
 runs:
   using: "docker"
-  image: "docker://rohammosalli/slack-action:v1.0.0"
+  image: "docker://rohammosalli/slack-action:v2.0.0"
