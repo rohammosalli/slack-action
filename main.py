@@ -38,9 +38,11 @@ def get_workflow_run_jobs(run_id):
     return response.json()['jobs']
 
 
-def get_previous_workflow_run(run_id):
-    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/runs?per_page=2"
-    response = requests.get(url, headers=get_headers())
+def get_previous_workflow_run(repo_owner, repo_name, run_id, branch, headers):
+    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/actions/runs?per_page=2"
+    if branch:
+        url += f"&branch={branch}"
+    response = requests.get(url, headers=headers)
     response.raise_for_status()
     runs = response.json()['workflow_runs']
     for run in runs:
@@ -84,7 +86,10 @@ commit_sha = current_workflow_run['head_sha']
 commit_url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/commit/{commit_sha}"
 workflow_url = current_workflow_run['html_url']
 
-previous_workflow_run = get_previous_workflow_run(RUN_ID)
+
+branch = current_workflow_run['head_branch']
+previous_workflow_run = get_previous_workflow_run(
+    REPO_OWNER, REPO_NAME, RUN_ID, branch, get_headers())
 
 workflow_id = current_workflow_run['workflow_id']
 current_run_number = current_workflow_run['run_number']
